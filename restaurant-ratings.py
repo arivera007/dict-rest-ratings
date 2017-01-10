@@ -25,15 +25,10 @@ def get_ratings_from_disk():
     for line in score_file:
         line = line.rstrip()
         restaurant = line.split(':')
-        restaurant_name = restaurant[0]
-        restaurant_rating = int(restaurant[1])
-        #ratings[restaurant_name] = ratings.get(restaurant_name, 0)
-        ratings[restaurant_name] = restaurant_rating
+        ratings[restaurant[0]] = int(restaurant[1])
 
     return ratings
 
-
-#def get_user_rating():
 main_ratings = {}
 
 user_restaurant_name = raw_input("Please enter a restaurant name: ")
